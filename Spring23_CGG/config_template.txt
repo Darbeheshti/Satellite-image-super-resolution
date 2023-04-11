@@ -1,0 +1,26 @@
+[TRAINING]
+low_res_dir = data/raw/CGG_data/train/10x/
+ground_truth_dir = data/raw/CGG_data/train/gt/
+high_res_patches_path = data/raw/CGG_data/train/hr_patches
+low_res_patches_path = data/raw/CGG_data/train/lr_patches
+create_patches = false
+lr_patches_down_scale = 4
+random_seed = 100
+train_split = 0.7
+standardisation = true
+flip_horizontal = true
+flip_vertical = false
+pad_training = [3, 107, 107]
+pad_target = [3, 1070, 1070]
+model = SimpleModel
+optimizer = adam
+learning_rate = 0.001
+num_epochs = 3
+batch_size = 10
+loss = mse
+
+[INFERENCE]
+model_dir = models/example_model_dir/
+
+[EVALUATE]
+model_dir = models/example_model_dir/
